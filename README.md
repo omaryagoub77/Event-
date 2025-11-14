@@ -1,16 +1,97 @@
-# React + Vite
+# Elegant Events - Event Venue Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A beautiful, modern React website for an event venue business owned by a woman who rents her space for birthdays and small parties.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Modern UI/UX**: Beautiful design with animations and transitions
+- **Fully Responsive**: Mobile-first design that works on all devices
+- **Firebase Integration**: Connected to Firestore for dynamic content
+- **Animated Components**: Smooth animations using Framer Motion
+- **Complete Page Set**: Home, About, Facilities, Gallery, Packages, Booking, Policies, Testimonials, Contact, and FAQ
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React (functional components + hooks)
+- TailwindCSS (styling)
+- Framer Motion (animations)
+- Firebase v9+ (Firestore + Storage)
+- React Router (navigation)
+- react-icons (icons)
 
-## Expanding the ESLint configuration
+## Pages
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. **Home** - Landing page with hero section and features
+2. **About** - Our story and values
+3. **Facilities** - Venue amenities with animated cards
+4. **Gallery** - Photo gallery with filtering and lightbox
+5. **Packages** - Event packages with pricing
+6. **Booking** - Multi-step booking form with date validation
+7. **Policies** - Accordion-style policy information
+8. **Testimonials** - Client reviews with carousel
+9. **Contact** - Contact form and information
+10. **FAQ** - Frequently asked questions with accordion
+
+## Design Guidelines
+
+- **Color Scheme**: Soft purple + white + blush pink accent
+- **Typography**: Poppins (body) + Playfair Display (headings)
+- **Layout**: Rounded corners (2xl), subtle shadows
+- **Animations**: Fade, slide, zoom, stagger effects with Framer Motion
+
+## Firebase Structure
+
+```
+firestore-root
+│
+├── settings (doc)
+│   ├── heroHeadline
+│   ├── heroSubtext
+│   ├── heroBackgroundUrl
+│
+├── facilities (collection)
+│   ├── { title, icon, description, order }
+│
+├── gallery (collection)
+│   ├── { url, category, caption, uploadedAt }
+│
+├── packages (collection)
+│   ├── { name, description, price, features[], popular, order }
+│
+├── bookings (collection)
+│   ├── { name, email, phone, eventDate, packageId, guests, notes, status, createdAt }
+│
+├── policies (collection)
+│   ├── { title, description, order }
+│
+├── testimonials (collection)
+│   ├── { name, review, rating, photo, createdAt }
+│
+├── contactInfo (doc)
+│   ├── { address, phone, email, instagram, whatsapp, mapEmbedUrl }
+│
+└── faqs (collection)
+    ├── { question, answer, order }
+```
+
+## Getting Started
+
+1. Install dependencies:
+   ```
+   npm install
+   ```
+
+2. Start the development server:
+   ```
+   npm run dev
+   ```
+
+3. Visit `http://localhost:5176` in your browser
+
+## Deployment
+
+The site is ready for deployment to Firebase Hosting or any other static hosting service.
+
+## Future Admin Dashboard
+
+The Firebase structure is designed to make it easy to build an admin dashboard for managing all content.
