@@ -7,7 +7,7 @@ import Preloader from './components/Preloader'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <HashRouter basename="/Event-">
+    <HashRouter >
       <Preloader />
       <App />
     </HashRouter>
